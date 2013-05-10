@@ -19,3 +19,6 @@ fpath=(~/repos/zsh-completions/src $fpath)
 # zsh-syntax-highlighting
 source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin 
