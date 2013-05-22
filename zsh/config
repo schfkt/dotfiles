@@ -20,5 +20,13 @@ fpath=(~/repos/zsh-completions/src $fpath)
 source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin 
+# rvm
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# nvm
+[[ -s /home/schfkt/.nvm/nvm.sh ]] && . /home/schfkt/.nvm/nvm.sh
+
+# 42
+compinit -i
+
