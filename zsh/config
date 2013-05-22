@@ -1,6 +1,9 @@
 # 256 colors term
 export TERM='xterm-256color'
 
+# zsh-completions
+fpath=(~/repos/zsh-completions/src $fpath)
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -8,25 +11,22 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="steeef"
 
 # Plugins
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# zsh-completions
-fpath=(~/repos/zsh-completions/src $fpath)
 
 # zsh-syntax-highlighting
 source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # nvm
 [[ -s /home/schfkt/.nvm/nvm.sh ]] && . /home/schfkt/.nvm/nvm.sh
 
-# 42
-compinit -i
-
+# npm tab completion
+if npm -v >/dev/null 2>&1; then
+    . <(npm completion)
+fi
