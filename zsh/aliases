@@ -1,7 +1,6 @@
 # git
 alias gcoam='git commit -am'
 alias gcom='git commit -m'
-alias gh='git hist'
 
 # package management
 alias ai='sudo apt-get install'
