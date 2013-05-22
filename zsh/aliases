@@ -9,3 +9,8 @@ alias au='sudo apt-get update'
 alias arm='sudo apt-get remove'
 alias acs='apt-cache --names-only search'
 alias repo='sudo add-apt-repository'
+alias autorm='sudo apt-get autoremove'
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+
+# misc
+alias upd='source ~/.zshrc'
