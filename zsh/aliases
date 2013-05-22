@@ -1,2 +1,11 @@
 # git
-alias gcam='git commit -am'
+alias gcoam='git commit -am'
+alias gcom='git commit -m'
+alias gh='git hist'
+
+# package management
+alias ai='sudo apt-get install'
+alias au='sudo apt-get update'
+alias arm='sudo apt-get remove'
+alias acs='apt-cache --names-only search'
+alias repo='sudo add-apt-repository'
