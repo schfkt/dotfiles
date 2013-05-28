@@ -1,0 +1,14 @@
+{
+    "auto_complete_commit_on_tab": true,
+    "bold_folder_labels": true,
+    "color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+    "font_size": 11,
+    "highlight_line": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "preview_on_click": false,
+    "save_on_focus_lost": true,
+    "translate_tabs_to_spaces": true
+}
