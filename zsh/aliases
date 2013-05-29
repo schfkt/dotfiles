@@ -1,6 +1,7 @@
 # git
 alias gcoam='git commit -am'
 alias gcom='git commit -m'
+alias gpom='git push origin master'
 
 # package management
 alias ai='sudo apt-get install'
