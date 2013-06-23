@@ -19,13 +19,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-# rvm
-PATH=$PATH:$HOME/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# nvm
-[[ -s /home/schfkt/.nvm/nvm.sh ]] && . /home/schfkt/.nvm/nvm.sh
-
 # npm tab completion
 if npm -v >/dev/null 2>&1; then
     . <(npm completion)

@@ -1,0 +1,10 @@
+# rvm loader
+function load_rvm() {
+    PATH=$PATH:$HOME/.rvm/bin
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+}
+
+# nvm loader
+function load_nvm() {
+    [[ -s /home/schfkt/.nvm/nvm.sh ]] && . /home/schfkt/.nvm/nvm.sh
+}
