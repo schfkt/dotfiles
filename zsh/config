@@ -17,6 +17,9 @@ plugins=(git colored-man)
 
 DISABLE_AUTO_UPDATE="true"
 
+# turn off annoying autocorrect
+DISABLE_CORRECTION="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # zsh-syntax-highlighting

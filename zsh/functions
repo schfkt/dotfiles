@@ -8,3 +8,10 @@ function load_rvm() {
 function load_nvm() {
     [[ -s /home/schfkt/.nvm/nvm.sh ]] && . /home/schfkt/.nvm/nvm.sh
 }
+
+# cd and then list
+function cl() {
+    cd $1
+    ls -lh 
+}
+

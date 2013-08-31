@@ -14,5 +14,4 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 # misc
 alias upd='source ~/.zshrc'
-alias node='nocorrect node'
-alias svc='service'
+alias svc='sudo service'
