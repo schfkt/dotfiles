@@ -9,6 +9,9 @@
 		"Vintage"
 	],
 	"preview_on_click": false,
-	"save_on_focus_lost": true,
+	"rulers":
+	[
+		80
+	],
 	"translate_tabs_to_spaces": true
 }
