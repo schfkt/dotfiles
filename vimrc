@@ -7,6 +7,9 @@ call vundle#rc()
   Bundle 'gmarik/vundle'
   Bundle 'scrooloose/nerdtree'
   Bundle 'airblade/vim-gitgutter'
+  Bundle 'godlygeek/tabular'
+  Bundle 'Valloric/YouCompleteMe'
+  Bundle 'kien/ctrlp.vim'
 filetype plugin indent on
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
