@@ -6,12 +6,17 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
   Bundle 'gmarik/vundle'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'airblade/vim-gitgutter'
   Bundle 'godlygeek/tabular'
   Bundle 'Valloric/YouCompleteMe'
+  Bundle 'majutsushi/tagbar'
+  Bundle 'bling/vim-airline'
+  Bundle 'tpope/vim-fugitive'
   Bundle 'kien/ctrlp.vim'
-filetype plugin indent on
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"load ftplugins and indent files
+filetype plugin on
+filetype indent on
 
 " Enable syntax highlighting
 syntax on
@@ -19,10 +24,14 @@ syntax on
 " Tabs should be converted to a group of 2 spaces
 set shiftwidth=2
 set tabstop=2
-set expandtab 
 
 " Turn tabs into spaces
+set expandtab 
+
 set smarttab
+
+" Use UTF-8
+set encoding=utf-8
 
 " Hotkey to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -30,15 +39,8 @@ map <C-n> :NERDTreeToggle<CR>
 " Colorscheme
 colors peachpuff
 
-" Automatically indent when adding a curly bracket, etc.
-set smartindent
-
 " Show line numbers
 set number
-
-" Highlight current line
-set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Highlight symbols after 80th column
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929 
@@ -56,7 +58,40 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
 
-" Reset colors for vim-gitgutter plugin
-" It will use colors from the current colorscheme
-highlight clear SignColumn
+" Toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Allows to switch buffers without saving changes
+set hidden
+
+" vim-airline theme
+let g:airline_theme='bubblegum'
+
+" Use patched fonts with vim-airline 
+let g:airline_powerline_fonts = 1
+
+" No lag when leaving insert mode with vim-airline plugin activated
+set ttimeoutlen=50
+
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=999
+
+" Turn off swap files
+set noswapfile
+
+"auto reload if file saved externally
+set autoread   
+
+" With these two settings autoread will work (almost) properly
+set updatetime=1000
+au CursorHold * checktime
+
+" CtrlP buffers switcher
+map <C-b> :CtrlPBuffer<CR>
 

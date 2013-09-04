@@ -10,7 +10,7 @@ fpath=(~/repos/zsh-completions/src $fpath)
 ZSH=$HOME/.oh-my-zsh
 
 # Theme
-ZSH_THEME="steeef"
+ZSH_THEME="schfkt"
 
 # Plugins
 plugins=(git colored-man)
