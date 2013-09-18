@@ -1,7 +1,7 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/iPlastic.tmTheme",
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
 	"font_size": 11,
 	"highlight_line": true,
 	"ignored_packages":
@@ -13,5 +13,7 @@
 	[
 		80
 	],
+	"soda_folder_icons": true,
+	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
