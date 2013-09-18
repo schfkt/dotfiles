@@ -12,6 +12,9 @@ call vundle#rc()
   Bundle 'bling/vim-airline'
   Bundle 'tpope/vim-fugitive'
   Bundle 'kien/ctrlp.vim'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'mhinz/vim-signify'
+  Bundle 'digitaltoad/vim-jade'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "load ftplugins and indent files
@@ -36,15 +39,8 @@ set encoding=utf-8
 " Hotkey to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" Colorscheme
-colors peachpuff
-
 " Show line numbers
 set number
-
-" Highlight symbols after 80th column
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929 
-match OverLength /\%81v.\+/
 
 " Status line
 set laststatus=2
@@ -88,10 +84,49 @@ set noswapfile
 "auto reload if file saved externally
 set autoread   
 
-" With these two settings autoread will work (almost) properly
-set updatetime=1000
-au CursorHold * checktime
-
 " CtrlP buffers switcher
-map <C-b> :CtrlPBuffer<CR>
+map <F2> :CtrlPBuffer<CR>
+
+" js specific settings
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+
+" ignore node_modules folders
+set wildignore+=*/node_modules/*
+
+" ruler at 80th column
+set colorcolumn=80                                                             
+highlight ColorColumn ctermbg=8
+
+" highlight search terms
+set hlsearch      
+
+" show search matches as you type
+set incsearch     
+
+" ignore case when searching
+set ignorecase    
+
+" remap : to ; in normal mode
+" very useful, less keypresses
+nnoremap ; :
+
+" colorscheme
+colorscheme solarized
+set background=dark
+
+if has('gui_running')
+  " disable mouse
+  set mouse=     
+  " set font  
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+  " turn off all GUI shit (menu bar, scrollbars, etc)
+  set guioptions=
+  " disable mouse wheel
+  map <ScrollWheelUp> <nop>
+  map <ScrollWheelDown> <nop>
+else
+  set term=screen-256color
+endif
+
+highlight clear SignColumn
 
