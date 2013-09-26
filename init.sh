@@ -10,3 +10,6 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 # make link to vim config
 ln -s ~/dotfiles/vimrc ~/.vimrc
 
+# link to urxvt config
+ln -s ~/dotfiles/Xdefaults ~/.Xdefaults
+
