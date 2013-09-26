@@ -1,5 +1,5 @@
-set nocompatible              
-filetype off        
+set nocompatible
+filetype off
 
 " Bundles
 set rtp+=~/.vim/bundle/vundle/
@@ -15,6 +15,8 @@ call vundle#rc()
   Bundle 'scrooloose/syntastic'
   Bundle 'mhinz/vim-signify'
   Bundle 'digitaltoad/vim-jade'
+  Bundle 'rking/ag.vim'
+  Bundle 'slim-template/vim-slim'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "load ftplugins and indent files
@@ -29,7 +31,7 @@ set shiftwidth=2
 set tabstop=2
 
 " Turn tabs into spaces
-set expandtab 
+set expandtab
 
 set smarttab
 
@@ -67,22 +69,16 @@ nnoremap <C-l> <C-w>l
 set hidden
 
 " vim-airline theme
-let g:airline_theme='bubblegum'
+let g:airline_theme='solarized'
 
-" Use patched fonts with vim-airline 
+" Use patched fonts with vim-airline
 let g:airline_powerline_fonts = 1
 
 " No lag when leaving insert mode with vim-airline plugin activated
 set ttimeoutlen=50
 
-" Minimal number of screen lines to keep above and below the cursor
-set scrolloff=999
-
-" Turn off swap files
-set noswapfile
-
 "auto reload if file saved externally
-set autoread   
+set autoread
 
 " CtrlP buffers switcher
 map <F2> :CtrlPBuffer<CR>
@@ -94,17 +90,17 @@ autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 set wildignore+=*/node_modules/*
 
 " ruler at 80th column
-set colorcolumn=80                                                             
+set colorcolumn=80
 highlight ColorColumn ctermbg=8
 
 " highlight search terms
-set hlsearch      
+set hlsearch
 
 " show search matches as you type
-set incsearch     
+set incsearch
 
 " ignore case when searching
-set ignorecase    
+set ignorecase
 
 " remap : to ; in normal mode
 " very useful, less keypresses
@@ -116,17 +112,24 @@ set background=dark
 
 if has('gui_running')
   " disable mouse
-  set mouse=     
-  " set font  
+  set mouse=
+  " set font
   set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
   " turn off all GUI shit (menu bar, scrollbars, etc)
   set guioptions=
   " disable mouse wheel
   map <ScrollWheelUp> <nop>
   map <ScrollWheelDown> <nop>
-else
-  set term=screen-256color
 endif
 
 highlight clear SignColumn
+
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" ag is fast enough that CtrlP doesn't need to cache
+let g:ctrlp_use_caching = 0
+
+" use system clipboard as the default register
+set clipboard=unnamedplus
 
