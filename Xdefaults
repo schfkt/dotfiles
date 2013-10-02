@@ -48,3 +48,32 @@ URxvt*letterSpace: -1
 !! disable scrollbar
 URxvt*scrollBar: false
 
+!! extensions
+URxvt.perl-lib: /home/schfkt/repos/urxvt-perls/
+URxvt.perl-ext-common: clipboard,keyboard-select
+
+!! settings for clipboard extension
+!! Shift+Ctrl+C
+URxvt.keysym.C-C: perl:clipboard:copy
+!! Shift+Ctrl+V
+URxvt.keysym.C-V: perl:clipboard:paste
+
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+!! fix for Ctrl+arrows hotkeys
+URxvt.keysym.Control-Up:     \033[1;5A
+URxvt.keysym.Control-Down:   \033[1;5B
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+
+!! 42
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!! URxvt.cursorUnderline: 1
+URxvt.cursorUnderline: true
+URxvt*saveLines: 12000
+
