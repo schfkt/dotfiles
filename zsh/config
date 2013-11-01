@@ -30,3 +30,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 if npm -v >/dev/null 2>&1; then
     . <(npm completion)
 fi
+
+# fix fox ctrl+u hotkey
+bindkey \^U backward-kill-line

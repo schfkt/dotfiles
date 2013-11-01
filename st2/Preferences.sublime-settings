@@ -4,10 +4,7 @@
 	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
 	"font_size": 11,
 	"highlight_line": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
+	"ignored_packages": [ ],
 	"preview_on_click": false,
 	"rulers":
 	[
@@ -15,5 +12,6 @@
 	],
 	"soda_folder_icons": true,
 	"theme": "Soda Light.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"vintage_start_in_command_mode": true
 }

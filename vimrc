@@ -17,6 +17,8 @@ call vundle#rc()
   Bundle 'digitaltoad/vim-jade'
   Bundle 'rking/ag.vim'
   Bundle 'slim-template/vim-slim'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'scrooloose/nerdcommenter'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "load ftplugins and indent files
@@ -83,9 +85,6 @@ set autoread
 " CtrlP buffers switcher
 map <F2> :CtrlPBuffer<CR>
 
-" js specific settings
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
-
 " ignore node_modules folders
 set wildignore+=*/node_modules/*
 
@@ -130,6 +129,6 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " ag is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
 
-" use system clipboard as the default register
-set clipboard=unnamedplus
+" close all opened buffers
+nmap <F9> :%bd<CR>
 

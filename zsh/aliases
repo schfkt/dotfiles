@@ -17,7 +17,22 @@ alias rl='source ~/.zshrc'
 alias svc='sudo service'
 alias pd="cd -"
 alias h="cd ~"
+alias n="nautilus ."
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
+
+# tmux
+alias tl='tmux ls'
+alias ta='tmux attach-session -t'
+alias tn='tmux new-session -s'
+
+# vim
+alias v='vim'
+alias gv='gvim'
+
+# rvm
+alias ru='rvm use'
+alias rls='rvm list'
+alias rg='rvm gemset'
 
