@@ -8,22 +8,22 @@ alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
 alias arm='sudo apt-get remove'
 alias acs='apt-cache --names-only search'
+alias ac='apt-cache'
 alias repo='sudo add-apt-repository'
 alias autorm='sudo apt-get autoremove'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 # misc
-alias rl='source ~/.zshrc'
+alias refresh='source ~/.zshrc'
 alias svc='sudo service'
 alias pd="cd -"
-alias h="cd ~"
 alias n="nautilus ."
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
 
 # tmux
-alias tl='tmux ls'
+alias tls='tmux ls'
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
 
@@ -35,4 +35,7 @@ alias gv='gvim'
 alias ru='rvm use'
 alias rls='rvm list'
 alias rg='rvm gemset'
+
+# disable some shit from oh-my-zsh
+unalias ..
 
