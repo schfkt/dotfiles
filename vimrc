@@ -107,7 +107,7 @@ nnoremap ; :
 
 " colorscheme
 colorscheme solarized
-set background=light
+set background=dark
 
 if has('gui_running')
   " disable mouse
