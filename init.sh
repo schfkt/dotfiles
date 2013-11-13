@@ -17,3 +17,6 @@ ln -s ~/dotfiles/Xdefaults ~/.Xdefaults
 # i3
 ln -s ~/dotfiles/i3 ~/.i3
 
+# xsessionrc
+ln -s ~/dotfiles/xsessionrc ~/.xsessionrc
+
