@@ -151,6 +151,7 @@ bar {
 }
 
 new_window 1pixel
+new_float normal
 workspace_auto_back_and_forth yes
 
 # set style for particular windows
@@ -168,4 +169,6 @@ exec --no-startup-id synapse --startup
 exec --no-startup-id parcellite
 exec --no-startup-id dropbox start -i
 exec --no-startup-id gnome-sound-applet
+exec --no-startup-id feh --bg-scale ~/Изображения/Wallpapers/solid-baby-blue.jpg
+exec --no-startup-id nm-applet
 
