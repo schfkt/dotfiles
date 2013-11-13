@@ -17,7 +17,8 @@ alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 alias refresh='source ~/.zshrc'
 alias svc='sudo service'
 alias pd="cd -"
-alias n="nautilus ."
+alias n="nautilus --no-desktop ."
+alias cuke='cucumber -f html -b'
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
