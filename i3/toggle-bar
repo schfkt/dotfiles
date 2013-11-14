@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+I3_BAR_ID = "bar-0"
+i3_msg_output = `i3-msg -t get_bar_config "#{I3_BAR_ID}"`
+bar_config = JSON.parse(i3_msg_output)
+case bar_config["mode"]
+when "invisible"
+  `i3-msg "bar mode dock"`
+when "dock"
+  `i3-msg "bar mode invisible"`
+else
+  puts "error"
+end
+
+# vim: ft=ruby
+

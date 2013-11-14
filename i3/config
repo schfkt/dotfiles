@@ -148,11 +148,17 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status --config ~/.i3/status.conf
         position top
+        mode invisible
 }
 
 new_window 1pixel
 new_float normal
 workspace_auto_back_and_forth yes
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # set style for particular windows
 for_window [title="Разблокирование секретного ключа"] floating enable
@@ -162,6 +168,10 @@ for_window [title="Сделать снимок экрана"] floating enable
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'Suspend?' -b 'Yes' 'killall i3-nagbar && dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
 bindsym $mod+Control+l exec --no-startup-id "gnome-screensaver-command -l"
 bindsym $mod+n exec --no-startup-id "nautilus --no-desktop"
+bindsym $mod+c exec --no-startup-id gnome-screenshot --interactive
+
+# toggle bar state (invisible/dock)
+bindsym $mod+o exec --no-startup-id "~/.i3/toggle-bar"
 
 # start required apps
 exec --no-startup-id gnome-settings-daemon
