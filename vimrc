@@ -132,3 +132,6 @@ let g:ctrlp_use_caching = 0
 " close all opened buffers
 nmap <F9> :%bd<CR>
 
+" run Ag
+nnoremap <F10> :Ag<Space>
+
