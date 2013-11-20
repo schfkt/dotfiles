@@ -3,18 +3,11 @@
 i3_msg_output=$(i3-msg -t get_bar_config "bar-0")
 regexp='"mode":"(dock|invisible)"'
 if [[ $i3_msg_output =~ $regexp ]]; then
-  mode="${BASH_REMATCH[1]}"
-  case $mode in
-    dock)
-      i3-msg "bar mode invisible"
-      ;;
-    invisible)
-      i3-msg "bar mode dock"
-      ;;
-    *)
-      echo "Something wrong"
-      exit 1
-  esac
+  if [ "${BASH_REMATCH[1]}" = "dock" ]; then
+    i3-msg "bar mode invisible"
+  else
+    i3-msg "bar mode dock"
+  fi
 fi
 
 # vim: ft=sh
