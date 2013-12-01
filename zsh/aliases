@@ -2,6 +2,8 @@
 alias gcoam='git commit -am'
 alias gcom='git commit -m'
 alias gpom='git push origin master'
+alias gh='git log --graph --date=short --decorate --abbrev-commit --stat'
+alias gha='git log --graph --date=short --decorate --abbrev-commit --stat --all'
 
 # package management
 alias ai='sudo apt-get install'
@@ -19,6 +21,7 @@ alias svc='sudo service'
 alias pd="cd -"
 alias n="nautilus --no-desktop ."
 alias cuke='cucumber -f html -b'
+alias sbl='subl &'
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
