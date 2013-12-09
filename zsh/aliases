@@ -4,6 +4,8 @@ alias gcom='git commit -m'
 alias gpom='git push origin master'
 alias gh='git log --graph --date=short --decorate --abbrev-commit --stat'
 alias gha='git log --graph --date=short --decorate --abbrev-commit --stat --all'
+alias gsh='git stash'
+alias gpo='git push origin'
 
 # package management
 alias ai='sudo apt-get install'

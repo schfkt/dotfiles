@@ -27,3 +27,13 @@ function .. (){
     cd $dir #>&/dev/null
 }
 
+# generate file of specified size (MB)
+function pew() {
+  if [[ -n $1 ]]; then
+    dd if=/dev/urandom of=$1.bin bs=1M count=$1
+  else
+    echo "Can't haz"
+  fi
+}
+
+# vim: ft=zsh

@@ -19,6 +19,7 @@ call vundle#rc()
   Bundle 'slim-template/vim-slim'
   Bundle 'pangloss/vim-javascript'
   Bundle 'scrooloose/nerdcommenter'
+  Bundle 'dart-lang/dart-vim-plugin'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "load ftplugins and indent files
