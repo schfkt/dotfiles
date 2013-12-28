@@ -1,4 +1,5 @@
 #!/bin/bash
+# take screenshot, save it to dropbox and copy public link to clipboard
 
 DROPBOX_PUBLIC=~/Dropbox/Public/
 filepath="$DROPBOX_PUBLIC/$(date +%F-%H-%M-%S-%N).png"
