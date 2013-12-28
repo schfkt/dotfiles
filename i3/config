@@ -153,6 +153,7 @@ bar {
 
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
+hide_edge_borders both
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -171,9 +172,9 @@ assign [class="Skype"] 1
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'Suspend?' -b 'Yes' 'killall i3-nagbar && dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
 bindsym $mod+Control+l exec --no-startup-id "gnome-screensaver-command -l"
 bindsym $mod+n exec --no-startup-id "nautilus"
-bindsym $mod+c exec --no-startup-id gnome-screenshot --interactive
 bindsym $mod+m exec --no-startup-id gnome-system-monitor
 bindsym $mod+z exec --no-startup-id gnome-control-center
+bindsym $mod+c exec --no-startup-id ~/bin/scrshot
 
 # toggle bar state (invisible/dock)
 bindsym $mod+o exec --no-startup-id "~/.i3/toggle-bar"
