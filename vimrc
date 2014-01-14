@@ -22,6 +22,8 @@ call vundle#rc()
   Bundle 'dart-lang/dart-vim-plugin'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+set t_Co=256
+
 "load ftplugins and indent files
 filetype plugin on
 filetype indent on
@@ -72,7 +74,7 @@ nnoremap <C-l> <C-w>l
 set hidden
 
 " vim-airline theme
-let g:airline_theme='solarized'
+let g:airline_theme='luna'
 
 " Use patched fonts with vim-airline
 let g:airline_powerline_fonts = 1
