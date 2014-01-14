@@ -3,9 +3,8 @@
 
 DROPBOX_PUBLIC=~/Dropbox/Public/
 filepath="$DROPBOX_PUBLIC/$(date +%F-%H-%M-%S-%N).png"
-sleep 1 # need some magic here
-gnome-screenshot --area -f $filepath
-public_url=$(dropbox puburl $filepath)
+scrot -s $filepath
+public_url=$(dropbox-cli puburl $filepath)
 if [[ $public_url =~ ^https:// ]]; then
   echo $public_url | xclip -sel clip
 fi
