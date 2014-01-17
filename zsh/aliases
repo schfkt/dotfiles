@@ -8,20 +8,11 @@ alias gsh='git stash'
 alias gpo='git push origin'
 
 # package management
-alias ai='sudo apt-get install'
-alias au='sudo apt-get update'
-alias arm='sudo apt-get remove'
-alias acs='apt-cache --names-only search'
-alias ac='apt-cache'
-alias repo='sudo add-apt-repository'
-alias autorm='sudo apt-get autoremove'
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias em='sudo emerge -av'
 
 # misc
-alias refresh='source ~/.zshrc'
-alias svc='sudo service'
+alias re!='source ~/.zshrc'
 alias pd="cd -"
-alias n="nautilus --no-desktop ."
 alias cuke='cucumber -f html -b'
 alias sbl='subl &'
 
