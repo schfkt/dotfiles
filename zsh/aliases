@@ -18,7 +18,7 @@ alias autorm='sudo apt-get autoremove'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 # misc
-alias refresh='source ~/.zshrc'
+alias re!='source ~/.zshrc'
 alias svc='sudo service'
 alias pd="cd -"
 alias n="nautilus --no-desktop ."
