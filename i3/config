@@ -185,7 +185,8 @@ exec --no-startup-id synapse --startup
 exec --no-startup-id parcellite
 exec --no-startup-id dropbox start -i
 exec --no-startup-id gnome-sound-applet
-exec --no-startup-id feh --bg-scale ~/Изображения/Wallpapers/solid-baby-blue.jpg
+# exec --no-startup-id feh --bg-scale ~/Изображения/Wallpapers/solid-baby-blue.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id bluetooth-applet
 
