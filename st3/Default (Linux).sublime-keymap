@@ -1,7 +1,5 @@
 [
     { "keys": ["shift+alt+a"], "command": "alignment" },
-    { "keys": ["super+right"], "command": "move_to", "args": { "to": "eol" } }, 
-    { "keys": ["super+left"], "command": "move_to", "args": { "to": "bol" } },
     { "keys": ["ctrl+\\"], "command": "exit_insert_mode",
       "context":
       [
