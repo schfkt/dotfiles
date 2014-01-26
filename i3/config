@@ -178,7 +178,7 @@ bindsym $mod+z exec --no-startup-id gnome-control-center
 bindsym $mod+c exec --no-startup-id ~/bin/scrshot
 
 # toggle bar state (invisible/dock)
-bindsym $mod+o exec --no-startup-id "~/.i3/toggle-bar"
+bindsym $mod+o exec --no-startup-id "~/bin/i3-toggle-bar"
 
 # start required apps
 exec --no-startup-id gnome-settings-daemon
