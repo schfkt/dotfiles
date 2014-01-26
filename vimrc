@@ -138,3 +138,6 @@ nmap <F9> :%bd<CR>
 " run Ag
 nnoremap <F10> :Ag<Space>
 
+" write with sudo
+cnoremap w!! w !sudo tee % >/dev/null
+
