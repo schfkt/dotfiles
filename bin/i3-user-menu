@@ -1,0 +1,87 @@
+#!/usr/bin/env ruby
+# shows simple menu with the next items: suspend, lock, reboot, halt, cancel
+# requirements: dzen2
+# inspired by: https://github.com/ashinkarov/i3-extras/blob/master/i3-exit
+
+require 'json'
+
+MENU_ENTRIES = {
+  :suspend  => "Suspend (s)",
+  :lock     => "Lock    (l)",
+  :reboot   => "Reboot  (r)",
+  :halt     => "Halt    (h)",
+  :cancel   => "Cancel  (c)"
+}
+
+def get_active_output_size
+  outputs = JSON.parse(`i3-msg -t get_outputs`)
+  active = outputs.find { |output| output["active"] == true }
+  [ active["rect"]["width"], active["rect"]["height"] ]
+end
+
+def setup_events
+  [ "onstart=uncollapse,grabkeys",
+    "button1=ungrabkeys,menuprint,exit",
+    "key_Escape=exit",
+    "key_q=exit",
+    "key_s=ungrabkeys,print:#{MENU_ENTRIES[:suspend]},exit",
+    "key_l=ungrabkeys,print:#{MENU_ENTRIES[:lock]},exit",
+    "key_r=ungrabkeys,print:#{MENU_ENTRIES[:reboot]},exit",
+    "key_h=ungrabkeys,print:#{MENU_ENTRIES[:halt]},exit",
+    "key_c=ungrabkeys,print:#{MENU_ENTRIES[:cancel]},exit"
+  ].join(";")
+end
+
+def setup_options
+  width, height = get_active_output_size
+  { "-p"   => "",
+    "-m"   => "",
+    "-l"   => "#{MENU_ENTRIES.length}",
+    "-w"   => "300",
+    "-x"   => "#{width / 2 - 150}",
+    "-y"   => "#{height / 2 - 150}",
+    "-sa"  => "c",
+    "-e"   => '"' + setup_events + '"',
+    "-fn"  => "-*-clean-bold-*-*-*-15-*-*-*-*-*-*-*",
+    "-bg"  => '"#151515"',
+    "-fg"  => '"#92cd00"' }.reduce("") do |memo, (k, v)|
+    memo += "%s %s%s" % [ k, v, v.empty? ? "" : " " ]
+  end
+end
+
+def setup_menu
+  "^fg(#ff9000) Shutdown options / [Esc, q]^fg()"\
+  "\n#{MENU_ENTRIES[:suspend]}"\
+  "\n#{MENU_ENTRIES[:lock]}"\
+  "\n#{MENU_ENTRIES[:reboot]}"\
+  "\n#{MENU_ENTRIES[:halt]}"\
+  "\n#{MENU_ENTRIES[:cancel]}"
+end
+
+def get_command(action)
+  case action
+  when MENU_ENTRIES[:suspend]
+    "dbus-send --print-reply --system --dest=org.freedesktop.UPower "\
+    "/org/freedesktop/UPower org.freedesktop.UPower.Suspend"
+  when MENU_ENTRIES[:lock]
+    "gnome-screensaver-command -l"
+  when MENU_ENTRIES[:reboot]
+    "dbus-send --system --print-reply --dest=\"org.freedesktop.ConsoleKit\" "\
+    "/org/freedesktop/ConsoleKit/Manager "\
+    "org.freedesktop.ConsoleKit.Manager.Restart"
+  when MENU_ENTRIES[:halt]
+    "dbus-send --system --print-reply --dest=\"org.freedesktop.ConsoleKit\" "\
+    "/org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop"
+  end
+end
+
+def show_menu
+  IO.popen("dzen2 #{setup_options}", "r+") do |io|
+    io.puts(setup_menu)
+    io.gets
+  end
+end
+
+cmd = get_command(show_menu.to_s.strip)
+`#{cmd}` if cmd
+

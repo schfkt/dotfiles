@@ -170,12 +170,15 @@ for_window [title="Действия над файлами"] floating enable
 assign [class="Skype"] 1
 
 # useful hotkeys
-bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'Suspend?' -b 'Yes' 'killall i3-nagbar && dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend'"
-bindsym $mod+Control+l exec --no-startup-id "gnome-screensaver-command -l"
 bindsym $mod+n exec --no-startup-id "nautilus"
 bindsym $mod+m exec --no-startup-id gnome-system-monitor
 bindsym $mod+z exec --no-startup-id gnome-control-center
 bindsym $mod+c exec --no-startup-id ~/bin/scrshot
+
+# show user menu
+# for some reason menu keys don't work without the sleep command before the 
+# actual i3-user-menu script
+bindsym $mod+u exec --no-startup-id "sleep 0.2; ~/bin/i3-user-menu"
 
 # toggle bar state (invisible/dock)
 bindsym $mod+o exec --no-startup-id "~/bin/i3-toggle-bar"
