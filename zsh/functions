@@ -1,30 +1,38 @@
 # rvm loader
 function load_rvm() {
+  if ! type rvm &> /dev/null; then
     PATH=$PATH:$HOME/.rvm/bin
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+  else
+    echo "rvm is already loaded"
+  fi
 }
 
 # nvm loader
 function load_nvm() {
+  if ! type nvm &> /dev/null; then
     [[ -s /home/schfkt/.nvm/nvm.sh ]] && . /home/schfkt/.nvm/nvm.sh
+  else
+    echo "nvm is already loaded"
+  fi
 }
 
 # cd and then list
 function cl() {
-    cd $1
-    ls -lh
+  cd $1
+  ls -lh
 }
 
 # Source: http://unix.stackexchange.com/questions/6/what-are-your-favorite-command-line-features-or-tricks/122#122
 # Usage .. [n]
 function .. (){
-    local arg=${1:-1};
-    local dir=""
-    while [ $arg -gt 0 ]; do
-        dir="../$dir"
-        arg=$(($arg - 1));
-    done
-    cd $dir #>&/dev/null
+  local arg=${1:-1};
+  local dir=""
+  while [ $arg -gt 0 ]; do
+      dir="../$dir"
+      arg=$(($arg - 1));
+  done
+  cd $dir #>&/dev/null
 }
 
 # generate file of specified size (MB)
