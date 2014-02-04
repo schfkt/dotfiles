@@ -6,6 +6,8 @@ alias gh='git log --graph --date=short --decorate --abbrev-commit --stat'
 alias gha='git log --graph --date=short --decorate --abbrev-commit --stat --all'
 alias gsh='git stash'
 alias gpo='git push origin'
+alias glr='git pull -r'
+alias glro='git pull -r origin'
 
 # package management
 alias ai='sudo apt-get install'
@@ -24,6 +26,7 @@ alias pd="cd -"
 alias n="nautilus --no-desktop ."
 alias cuke='cucumber -f html -b'
 alias sbl='subl &'
+alias plf='pgrep -lf'
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'

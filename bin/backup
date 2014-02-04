@@ -1,5 +1,5 @@
 #!/bin/bash
-DESTINATION=/run/media/schfkt/cc87bc80-db2b-45c9-97b1-a0ebd1d17710/backup
+DESTINATION=/media/schfkt/cc87bc80-db2b-45c9-97b1-a0ebd1d17710/backup
 SOURCE=$HOME
 EXCLUDE_FILELIST="`dirname $0`/exclude_filelist.cfg"
 
