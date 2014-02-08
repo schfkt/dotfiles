@@ -20,6 +20,9 @@ DISABLE_CORRECTION="true"
 # don't change automatically title for tmux windows
 export DISABLE_AUTO_TITLE=true
 
+# folder with custom themes/plugins etc.
+ZSH_CUSTOM=~/dotfiles/zsh/custom
+
 source $ZSH/oh-my-zsh.sh
 
 # zsh-syntax-highlighting
