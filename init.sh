@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# st2
-ln -s ~/dotfiles/st2/Preferences.sublime-settings ~/.config/sublime-text-2/Packages/User/Preferences.sublime-settings
-ln -s ~/dotfiles/st2/Ruby.sublime-settings ~/.config/sublime-text-2/Packages/User/Ruby.sublime-settings
-ln -s ~/dotfiles/st2/Default\ \(Linux\).sublime-keymap ~/.config/sublime-text-2/Packages/User/Default\ \(Linux\).sublime-keymap
+# init submodules
+git submodule init
+git submodule update
 
+# create links
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/Xdefaults ~/.Xdefaults
