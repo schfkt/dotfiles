@@ -1,5 +1,8 @@
+# This theme is based on the steef theme from oh-my-zsh
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/steeef.zsh-theme
+
 # ruby version
-rvm_color="%F{1}"
+rvm_color="%F{160}"
 function ruby_version()
 {
   if which rvm-prompt &> /dev/null; then
@@ -8,7 +11,7 @@ function ruby_version()
 }
 
 # node version
-nvm_color="%F{112}"
+nvm_color="%F{28}"
 function node_version()
 {
   if which nvm &> /dev/null; then
@@ -16,7 +19,6 @@ function node_version()
   fi
 }
 
-# stolen from steef theme
 # prompt style and colors based on Steve Losh's Prose theme:
 # http://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
 #
@@ -124,5 +126,4 @@ lambda_color="%F{9}"
 PROMPT=$'
 %{$pwd_color%}%~%{$reset_color%} $vcs_info_msg_0_ $(ruby_version) $(node_version)
 %{$lambda_color%}λ%{$reset_color%} '
-#$(ruby_version) $(node_version)
 RPROMPT='[%*]'
