@@ -1,7 +1,0 @@
-#!/bin/bash
-# hack for nautilus
-# simply run it without the stupid desktop window
-
-/usr/bin/nautilus --no-desktop
-
-# vim: ft=sh
