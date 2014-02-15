@@ -27,6 +27,7 @@ alias n="nautilus --no-desktop ."
 alias cuke='cucumber -f html -b'
 alias sbl='subl &'
 alias plf='pgrep -lf'
+alias vgr='vagrant'
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
@@ -35,6 +36,7 @@ alias dw='xclip -o | xargs wget'
 alias tls='tmux ls'
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
+alias tk='tmux kill-session -t'
 
 # vim
 alias v='vim'

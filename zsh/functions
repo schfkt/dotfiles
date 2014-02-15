@@ -44,4 +44,9 @@ function pew() {
   fi
 }
 
+# find specific alias
+function agr() {
+  alias | \grep $1
+}
+
 # vim: ft=zsh

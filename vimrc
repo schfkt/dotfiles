@@ -122,6 +122,8 @@ if has('gui_running')
   " disable mouse wheel
   map <ScrollWheelUp> <nop>
   map <ScrollWheelDown> <nop>
+  " background
+  set background=light
 endif
 
 highlight clear SignColumn
