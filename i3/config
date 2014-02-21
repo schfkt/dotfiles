@@ -178,7 +178,7 @@ bindsym $mod+c exec --no-startup-id ~/bin/scrshot
 # show user menu
 # for some reason menu keys don't work without the sleep command before the 
 # actual i3-user-menu script
-bindsym $mod+u exec --no-startup-id "sleep 0.2; ~/bin/i3-user-menu"
+bindsym $mod+u exec --no-startup-id "sleep 0.2; ~/bin/user-menu"
 
 # toggle bar state (invisible/dock)
 bindsym $mod+o exec --no-startup-id "~/bin/i3-toggle-bar"
