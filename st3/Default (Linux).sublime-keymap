@@ -7,5 +7,6 @@
         { "key": "setting.is_widget", "operand": false }
       ]
     },
-    { "keys": ["ctrl+b"], "command": "toggle_side_bar" }
+    { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+t"], "command": "toggle_tabs" }
 ]
