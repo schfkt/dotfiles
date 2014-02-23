@@ -53,7 +53,7 @@ def setup_options
 end
 
 def setup_menu
-  "^fg(#ff9000) Shutdown options / [Esc, q]^fg()"\
+  "^fg(#ff9000) Select action / Exit [Esc, q]^fg()"\
   "\n#{MENU_ENTRIES[:suspend]}"\
   "\n#{MENU_ENTRIES[:lock]}"\
   "\n#{MENU_ENTRIES[:reboot]}"\
