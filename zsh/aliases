@@ -1,3 +1,7 @@
+# disable some shit from oh-my-zsh
+unalias ..
+unalias ll
+
 # git
 alias gcoam='git commit -am'
 alias gcom='git commit -m'
@@ -28,6 +32,7 @@ alias cuke='cucumber -f html -b'
 alias sbl='subl &'
 alias plf='pgrep -lf'
 alias vgr='vagrant'
+alias ll='ls -lh'
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
@@ -46,7 +51,4 @@ alias gv='gvim'
 alias ru='rvm use'
 alias rls='rvm list'
 alias rg='rvm gemset'
-
-# disable some shit from oh-my-zsh
-unalias ..
 
