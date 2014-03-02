@@ -1,0 +1,14 @@
+{
+	"installed_packages":
+	[
+		"AlignTab",
+		"CTags",
+		"GitGutter",
+		"Ruby Slim",
+		"Solarized Color Scheme",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-ruby",
+		"Theme - Soda"
+	]
+}

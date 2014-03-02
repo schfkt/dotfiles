@@ -1,5 +1,6 @@
 [
-    { "keys": ["shift+alt+a"], "command": "alignment" },
+    { "keys": ["shift+alt+a"], "command": "align_tab",
+      "args": { "live_preview": true } },
     { "keys": ["ctrl+\\"], "command": "exit_insert_mode",
       "context":
       [
