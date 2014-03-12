@@ -22,7 +22,7 @@ function load_nvm() {
 # cd and then list
 function cl() {
   cd $1
-  ls -lh
+  ls
 }
 
 # Source: http://unix.stackexchange.com/questions/6/what-are-your-favorite-command-line-features-or-tricks/122#122
