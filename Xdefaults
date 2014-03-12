@@ -50,8 +50,8 @@ URxvt*letterSpace: -1
 URxvt*scrollBar: false
 
 !! extensions
-URxvt.perl-lib: /home/schfkt/repos/urxvt-perls/
-URxvt.perl-ext-common: clipboard,keyboard-select
+URxvt.perl-lib: /home/schfkt/dotfiles/lib/urxvt-perls/
+URxvt.perl-ext-common: clipboard
 
 !! settings for clipboard extension
 !! Shift+Ctrl+C
@@ -62,7 +62,6 @@ URxvt.keysym.C-V: perl:clipboard:paste
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 URxvt.clipboard.autocopy: true
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !! fix for Ctrl+arrows hotkeys
 URxvt.keysym.Control-Up:     \033[1;5A
@@ -78,3 +77,5 @@ URxvt.iso14755_52: false
 URxvt.cursorUnderline: true
 URxvt*saveLines: 12000
 
+! Padding
+URxvt.internalBorder:10
