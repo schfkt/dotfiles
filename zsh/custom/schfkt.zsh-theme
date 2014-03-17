@@ -1,22 +1,25 @@
 # This theme is based on the steef theme from oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/steeef.zsh-theme
-pipe_color="%F{253}"
+pipe_symbol="%F{253%}|%{$reset_color%}"
 
 # ruby version
-rvm_color="%F{160}"
 function ruby_version()
 {
+  local rvm_color="%F{160}"
   if which rvm-prompt &> /dev/null; then
-    echo " %{$pipe_color%}|%{$reset_color%} %{$rvm_color%}"`rvm-prompt v g`"%{$reset_color%}"
+    echo " %{$pipe_symbol%} %{$rvm_color%}"`rvm-prompt v g`"%{$reset_color%}"
   fi
 }
 
 # node version
-nvm_color="%F{28}"
+zmodload zsh/pcre
 function node_version()
 {
+  local nvm_color="%F{70}"
   if which nvm &> /dev/null; then
-    echo " %{$pipe_color%}|%{$reset_color%} %{$nvm_color%}"`nvm version | tail -c +12`"%{$reset_color%}"
+    if [[ "$(node -v)" -pcre-match "v(\d+\.\d+\.\d+)" ]]; then
+      echo " %{$pipe_symbol%} %{$nvm_color%}$match%{$reset_color%}"
+    fi
   fi
 }
 
@@ -75,10 +78,10 @@ staged_color="%F{70}"
 unstaged_color="%F{166}"
 new_files_color="%F{164}"
 PR_RST="%{${reset_color}%}"
-FMT_BRANCH="%{$pipe_color%}|%{$reset_color%} %{$branch_color%}%b %u%c${PR_RST}"
-FMT_ACTION="%{$pipe_color%}|%{$reset_color%} %{$limegreen%}%a${PR_RST}"
-FMT_UNSTAGED="%{$unstaged_color%}✚"
-FMT_STAGED="%{$staged_color%}✚"
+FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%}%b%u%c${PR_RST}"
+FMT_ACTION=" %F{91%}%a${PR_RST}"
+FMT_UNSTAGED="%{$unstaged_color%}+"
+FMT_STAGED="%{$staged_color%}+"
 
 zstyle ':vcs_info:*:prompt:*' unstagedstr   "${FMT_UNSTAGED}"
 zstyle ':vcs_info:*:prompt:*' stagedstr     "${FMT_STAGED}"
@@ -109,9 +112,9 @@ function steeef_precmd {
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard --directory 2> /dev/null | grep -q "."; then
             PR_GIT_UPDATE=1
-            FMT_BRANCH="%{$pipe_color%}|%{$reset_color%} %{$branch_color%}%b %u%c%{$new_files_color%}✚${PR_RST}"
+            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%}%b%u%c%{$new_files_color%}+${PR_RST}"
         else
-            FMT_BRANCH="%{$pipe_color%}|%{$reset_color%} %{$branch_color%}%b %u%c${PR_RST}"
+            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%}%b%u%c${PR_RST}"
         fi
         zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 
@@ -121,9 +124,27 @@ function steeef_precmd {
 }
 add-zsh-hook precmd steeef_precmd
 
+# ahead commits
+function num_ahead() {
+  local ahead_color="%F{28}"
+  local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_AHEAD" -gt 0 ]; then
+    echo " %{$ahead_color%}↥$NUM_AHEAD%{$reset_color%}"
+  fi
+}
+
+# behind commits
+function num_behind() {
+  local behind_color="%F{160}"
+  local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_BEHIND" -gt 0 ]; then
+    echo " %{$behind_color%}↧$NUM_BEHIND%{$reset_color%}"
+  fi
+}
+
 pwd_color="%F{6}"
 symbol_color="%F{160}"
 
 PROMPT=$'
-%{$pwd_color%}%~%{$reset_color%} $vcs_info_msg_0_$(ruby_version)$(node_version)
+%{$pwd_color%}%~%{$reset_color%} $vcs_info_msg_0_$(num_ahead)$(num_behind)$(ruby_version)$(node_version)
 %{$symbol_color%}>%{$reset_color%} '
