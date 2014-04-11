@@ -31,15 +31,12 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # zsh-history-substring-search
 source ~/dotfiles/lib/zsh-history-substring-search/zsh-history-substring-search.zsh
+# colors
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=2,fg=white,bold'
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# npm tab completion
-if npm -v >/dev/null 2>&1; then
-    . <(npm completion)
-fi
 
 # fix fox ctrl+u hotkey
 bindkey \^U backward-kill-line

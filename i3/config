@@ -13,9 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# make title bar almost invisible
-font pango:DejaVu Sans Mono 0
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -175,8 +173,7 @@ bar {
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
 hide_edge_borders both
-new_window pixel 2
-new_float pixel 2
+new_window normal 2
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -198,7 +195,7 @@ bindsym $mod+z exec --no-startup-id gnome-control-center
 bindsym $mod+c exec --no-startup-id ~/bin/scrshot
 
 # show user menu
-# for some reason menu keys don't work without the sleep command before the 
+# for some reason menu keys don't work without the sleep command before the
 # actual i3-user-menu script
 bindsym $mod+u exec --no-startup-id "sleep 0.2; ~/bin/user-menu"
 
@@ -211,8 +208,7 @@ exec --no-startup-id synapse --startup
 exec --no-startup-id parcellite
 exec --no-startup-id dropbox start -i
 exec --no-startup-id gnome-sound-applet
-# exec --no-startup-id feh --bg-scale ~/Изображения/Wallpapers/solid-baby-blue.jpg
-exec --no-startup-id nm-applet
+exec --no-startup-id wicd-client --tray
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id bluetooth-applet
 

@@ -18,8 +18,9 @@ call vundle#rc()
   Bundle 'rking/ag.vim'
   Bundle 'slim-template/vim-slim'
   Bundle 'pangloss/vim-javascript'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'dart-lang/dart-vim-plugin'
+  Bundle 'sickill/vim-pasta'
+  Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-commentary'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 set t_Co=256
@@ -124,6 +125,8 @@ if has('gui_running')
   map <ScrollWheelDown> <nop>
   " background
   set background=light
+  " highlight current line
+  set cursorline
 endif
 
 highlight clear SignColumn
@@ -143,3 +146,5 @@ nnoremap <F10> :Ag<Space>
 " write with sudo
 cnoremap w!! w !sudo tee % >/dev/null
 
+" trim whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e

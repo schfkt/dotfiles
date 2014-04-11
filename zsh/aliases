@@ -6,12 +6,14 @@ unalias ll
 alias gcoam='git commit -am'
 alias gcom='git commit -m'
 alias gpom='git push origin master'
-alias gh='git log --graph --date=short --decorate --abbrev-commit --stat'
-alias gha='git log --graph --date=short --decorate --abbrev-commit --stat --all'
+alias gh='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias ghv='git log --graph --date=short --decorate --abbrev-commit --stat'
+alias ghva='git log --graph --date=short --decorate --abbrev-commit --stat --all'
 alias gsh='git stash'
 alias gpo='git push origin'
 alias glr='git pull -r'
 alias glro='git pull -r origin'
+alias gau='git add -u'
 
 # package management
 alias ai='sudo apt-get install'
@@ -31,7 +33,7 @@ alias n="/usr/bin/nautilus --no-desktop -w . &"
 alias cuke='cucumber -f html -b'
 alias sbl='subl &'
 alias plf='pgrep -lf'
-alias vgr='vagrant'
+alias vg='vagrant'
 alias ll='ls -lh'
 
 # download file by link from clipboard
