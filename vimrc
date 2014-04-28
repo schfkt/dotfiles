@@ -9,25 +9,25 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'majutsushi/tagbar'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'mhinz/vim-signify'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'rking/ag.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'sickill/vim-pasta'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-commentary'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'moll/vim-node'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'mhinz/vim-signify'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'rking/ag.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'sickill/vim-pasta'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-commentary'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'moll/vim-node'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -51,7 +51,8 @@ set hlsearch " Highlight search terms
 set incsearch " Show search matches as you type
 set ignorecase " Ignore case when searching
 set colorcolumn=80 " Ruler at 80th column
-set cursorline " Highlight current line
+set splitbelow
+set splitright
 
 " Write with sudo
 cnoremap w!! w !sudo tee % >/dev/null
@@ -92,18 +93,17 @@ else
   set background=dark
 endif
 
-hi ColorColumn ctermbg=8
+hi ColorColumn ctermbg=0
 hi clear SignColumn
-hi CursorLineNR ctermbg=0 ctermfg=NONE gui=NONE guifg=NONE guibg=#EEE8D5
 
 
 " -----------------------------------------------------------------------------
 " Hotkeys
 " -----------------------------------------------------------------------------
 
-map <C-n> :NERDTreeToggle<CR>
-map <F8> :TagbarToggle<CR>
-map <F2> :CtrlPBuffer<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F2> :CtrlPBuffer<CR>
 nnoremap <F10> :Ag<Space>
 
 " Quicker window movement
@@ -115,12 +115,18 @@ nnoremap <C-l> <C-w>l
 " Remap : to ; in normal mode
 nnoremap ; :
 
+" Disable arrow keys (:
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 
 " -----------------------------------------------------------------------------
 " Settings for plugins
 " -----------------------------------------------------------------------------
 
-let g:airline_theme='luna'
+let g:airline_theme = 'luna'
 let g:airline_powerline_fonts = 1
 
 " No lag when leaving insert mode with vim-airline plugin activated
@@ -132,6 +138,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " Ag is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
 
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " -----------------------------------------------------------------------------
 " GUI-specific settings

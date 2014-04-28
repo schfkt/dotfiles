@@ -35,6 +35,7 @@ alias sbl='subl &'
 alias plf='pgrep -lf'
 alias vg='vagrant'
 alias ll='ls -lh'
+alias gs='false' # fuck it
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
