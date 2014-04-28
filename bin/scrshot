@@ -2,7 +2,8 @@
 # take screenshot, save it to dropbox and copy public link to clipboard
 
 DROPBOX_PUBLIC=~/Dropbox/Public/
-filepath="$DROPBOX_PUBLIC/$(date +%F-%H-%M-%S-%N).png"
+random_number=$(od -vAn -tu4 -N4 < /dev/urandom | tr -d ' ')
+filepath="$DROPBOX_PUBLIC/$(date +%F-%H-%M-%S-%N)-$random_number.png"
 sleep 1 # need some magic here
 gnome-screenshot --area -f $filepath
 public_url=$(dropbox puburl $filepath)
