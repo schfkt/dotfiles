@@ -188,7 +188,7 @@ bindcode $mod+35 [class="Google-chrome"] scratchpad show
 assign [class="Skype"] 1
 
 # useful hotkeys
-bindsym $mod+n exec --no-startup-id "dolphin"
+bindsym $mod+n exec --no-startup-id dolphin
 bindsym $mod+p exec --no-startup-id ~/bin/switch-display.rb
 bindsym $mod+m exec --no-startup-id ksysguard
 bindsym $mod+z exec --no-startup-id systemsettings

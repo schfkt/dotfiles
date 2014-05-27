@@ -10,6 +10,3 @@
 [submodule "lib/zsh-history-substring-search"]
 	path = lib/zsh-history-substring-search
 	url = git@github.com:zsh-users/zsh-history-substring-search.git
-[submodule "lib/urxvt-perls"]
-	path = lib/urxvt-perls
-	url = git@github.com:muennich/urxvt-perls.git
