@@ -64,10 +64,11 @@ end
 def get_command(action)
   case action
   when MENU_ENTRIES[:suspend]
+    "~/bin/i3lock-wrapper && "\
     "dbus-send --print-reply --system --dest=org.freedesktop.UPower "\
     "/org/freedesktop/UPower org.freedesktop.UPower.Suspend"
   when MENU_ENTRIES[:lock]
-    "gnome-screensaver-command -l"
+    "~/bin/i3lock-wrapper"
   when MENU_ENTRIES[:reboot]
     "dbus-send --system --print-reply --dest=\"org.freedesktop.ConsoleKit\" "\
     "/org/freedesktop/ConsoleKit/Manager "\

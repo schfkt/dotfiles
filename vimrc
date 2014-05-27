@@ -6,10 +6,10 @@ filetype off
 " Bundles
 " -----------------------------------------------------------------------------
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'Valloric/YouCompleteMe'
@@ -86,14 +86,8 @@ set statusline+=%<%P                         " file position
 
 set t_Co=256
 colorscheme solarized
-
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
-
-hi ColorColumn ctermbg=0
+set background=light
+hi ColorColumn ctermbg=7
 hi clear SignColumn
 
 

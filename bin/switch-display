@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+PRIMARY = 'HDMI1'
+SECONDARY = 'LVDS1'
+
+def turn_on(display)
+  `xrandr --output #{display} --auto`
+end
+
+def turn_off(display)
+  `xrandr --output #{display} --off`
+end
+
+xrandr = `xrandr`
+if xrandr[/^#{PRIMARY}\s+connected/]
+  turn_off(SECONDARY)
+  turn_on(PRIMARY)
+else
+  turn_off(PRIMARY)
+  turn_on(SECONDARY)
+end
+
+sleep 2
+`feh --bg-scale ~/Изображения/wall.png`

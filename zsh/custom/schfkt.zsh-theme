@@ -129,7 +129,7 @@ function num_ahead() {
   local ahead_color="%F{28}"
   local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
   if [ "$NUM_AHEAD" -gt 0 ]; then
-    echo " %{$ahead_color%}↥$NUM_AHEAD%{$reset_color%}"
+    echo " %{$ahead_color%}$NUM_AHEAD -->%{$reset_color%}"
   fi
 }
 
@@ -138,7 +138,7 @@ function num_behind() {
   local behind_color="%F{160}"
   local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
   if [ "$NUM_BEHIND" -gt 0 ]; then
-    echo " %{$behind_color%}↧$NUM_BEHIND%{$reset_color%}"
+    echo " %{$behind_color%}<--$NUM_BEHIND%{$reset_color%}"
   fi
 }
 
