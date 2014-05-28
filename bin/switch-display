@@ -14,11 +14,11 @@ end
 
 xrandr = `xrandr`
 if xrandr[/^#{PRIMARY}\s+connected/]
-  turn_off(SECONDARY)
   turn_on(PRIMARY)
+  turn_off(SECONDARY)
 else
-  turn_off(PRIMARY)
   turn_on(SECONDARY)
+  turn_off(PRIMARY)
 end
 
 sleep 2
