@@ -1,0 +1,26 @@
+#!/bin/bash
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+VG=/dev/kubuntu-vg
+ROOT_LV=root
+SNAPSHOT_LV=backup-snapshot
+BACKUP_PATH=/media/schfkt/cc87bc80-db2b-45c9-97b1-a0ebd1d17710/backup-enc
+
+set -e
+
+echo
+echo "========================================================================"
+echo "Started at: $(date '+%F %H:%M:%S')"
+if [ -d "$BACKUP_PATH" ]; then
+  lvcreate --size 2G --snapshot --name $SNAPSHOT_LV "$VG/$ROOT_LV"
+  dd if="$VG/$SNAPSHOT_LV" | gzip -9 | gpg --homedir /home/schfkt/.gnupg/ -e -r 'Pavel Ivanov' > "$BACKUP_PATH/backup-$(date +%F).gz.gpg"
+  lvremove -f "$VG/$SNAPSHOT_LV"
+else
+  echo "Unable to find target dir: $BACKUP_PATH"
+fi
+echo "Finished at: $(date '+%F %H:%M:%S')"
+echo "========================================================================"
+echo
+
+pm-suspend
