@@ -96,9 +96,9 @@ hi clear SignColumn
 " -----------------------------------------------------------------------------
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <F8> :TagbarToggle<CR>
-nnoremap <F2> :CtrlPBuffer<CR>
-nnoremap <F10> :Ag<Space>
+nnoremap <leader>= :TagbarToggle<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>a :Ag<Space>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -133,6 +133,9 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+" Auto focus on tagbar window
+let g:tagbar_autofocus = 1
 
 " -----------------------------------------------------------------------------
 " GUI-specific settings

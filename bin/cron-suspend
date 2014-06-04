@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -n "$(pgrep ^i3lock$)" ]; then
+  /usr/sbin/pm-suspend
+fi

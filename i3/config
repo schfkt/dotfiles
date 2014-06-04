@@ -182,6 +182,8 @@ bindcode $mod+34 [class="Konsole"] scratchpad show
 bindcode $mod+35 [class="Google-chrome"] scratchpad show
 
 # set style for particular windows
+for_window [title="Разблокирование секретного ключа"] floating enable
+for_window [title="Введите идентификационную фразу"] floating enable
 # for_window [title="Действия над файлами"] floating enable
 
 # put windows on specific workspace
@@ -206,5 +208,5 @@ bindsym $mod+o exec --no-startup-id "~/bin/i3-toggle-bar"
 exec --no-startup-id dropbox start -i
 exec --no-startup-id ~/bin/switch-display
 exec --no-startup-id kmix
-exec --no-startup-id ~/bin/layouts
+exec --no-startup-id kbdd
 exec --no-startup-id klipper

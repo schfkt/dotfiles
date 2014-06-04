@@ -6,6 +6,7 @@ unalias ll
 alias gcoam='git commit -am'
 alias gcom='git commit -m'
 alias gpom='git push origin master'
+alias gpoh='git push origin HEAD'
 alias gh='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias ghv='git log --graph --date=short --decorate --abbrev-commit --stat'
 alias ghva='git log --graph --date=short --decorate --abbrev-commit --stat --all'
@@ -36,6 +37,7 @@ alias plf='pgrep -lf'
 alias vg='vagrant'
 alias ll='ls -lh'
 alias gs='false' # fuck it
+alias ccat='pygmentize -g'
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'

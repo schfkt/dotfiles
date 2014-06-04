@@ -138,7 +138,7 @@ function num_behind() {
   local behind_color="%F{160}"
   local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
   if [ "$NUM_BEHIND" -gt 0 ]; then
-    echo " %{$behind_color%}<--$NUM_BEHIND%{$reset_color%}"
+    echo " %{$behind_color%}<-- $NUM_BEHIND%{$reset_color%}"
   fi
 }
 
