@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# wait for kded4 to start
+while [ -z "$(pgrep -lf kded4)" ]; do
+  true
+done
+
+# load modules
+qdbus org.kde.kded /kded loadModule powerdevil
+qdbus org.kde.kded /kded loadModule keyboard

@@ -184,7 +184,9 @@ bindcode $mod+35 [class="Google-chrome"] scratchpad show
 # set style for particular windows
 for_window [title="Разблокирование секретного ключа"] floating enable
 for_window [title="Введите идентификационную фразу"] floating enable
-# for_window [title="Действия над файлами"] floating enable
+for_window [title="^Копирование" class="Dolphin"] floating enable
+for_window [title="^Удаление" class="Dolphin"] floating enable
+for_window [class="Kde-nm-connection-editor"] floating enable
 
 # put windows on specific workspace
 assign [class="Skype"] 1
@@ -195,6 +197,7 @@ bindsym $mod+p exec --no-startup-id ~/bin/switch-display
 bindsym $mod+m exec --no-startup-id ksysguard
 bindsym $mod+z exec --no-startup-id systemsettings
 bindsym $mod+c exec --no-startup-id ~/bin/scrshot
+bindsym $mod+x exec --no-startup-id kde-nm-connection-editor
 
 # show user menu
 # for some reason menu keys don't work without the sleep command before the
@@ -205,8 +208,8 @@ bindsym $mod+u exec --no-startup-id "sleep 0.2; ~/bin/user-menu"
 bindsym $mod+o exec --no-startup-id "~/bin/i3-toggle-bar"
 
 # start required apps
-exec --no-startup-id dropbox start -i
+exec --no-startup-id ~/bin/services
 exec --no-startup-id ~/bin/switch-display
+exec --no-startup-id dropbox start -i
 exec --no-startup-id kmix
-exec --no-startup-id kbdd
 exec --no-startup-id klipper

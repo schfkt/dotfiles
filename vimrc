@@ -1,6 +1,10 @@
 set nocompatible
 filetype off
 
+" Change leader to a comma
+" This has to be set before vundle starts loading all the plugins
+let mapleader=","
+
 
 " -----------------------------------------------------------------------------
 " Bundles
@@ -96,7 +100,7 @@ hi clear SignColumn
 " -----------------------------------------------------------------------------
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>= :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>a :Ag<Space>
 
@@ -136,6 +140,9 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Auto focus on tagbar window
 let g:tagbar_autofocus = 1
+
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
 
 " -----------------------------------------------------------------------------
 " GUI-specific settings
