@@ -144,19 +144,3 @@ let g:tagbar_autofocus = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
 
-" -----------------------------------------------------------------------------
-" GUI-specific settings
-" -----------------------------------------------------------------------------
-
-if has('gui_running')
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-
-  " Turn off all GUI shit (menu bar, scrollbars, etc)
-  set guioptions=
-
-  " Disable mouse
-  set mouse=
-  map <ScrollWheelUp> <nop>
-  map <ScrollWheelDown> <nop>
-endif
-
