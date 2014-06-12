@@ -64,11 +64,11 @@ end
 def get_command(action)
   case action
   when MENU_ENTRIES[:suspend]
-    "~/bin/i3lock-wrapper && "\
+    "/usr/lib/kde4/libexec/kscreenlocker_greet & "\
     "dbus-send --print-reply --system --dest=org.freedesktop.UPower "\
     "/org/freedesktop/UPower org.freedesktop.UPower.Suspend"
   when MENU_ENTRIES[:lock]
-    "~/bin/i3lock-wrapper"
+    "/usr/lib/kde4/libexec/kscreenlocker_greet"
   when MENU_ENTRIES[:reboot]
     "dbus-send --system --print-reply --dest=\"org.freedesktop.ConsoleKit\" "\
     "/org/freedesktop/ConsoleKit/Manager "\

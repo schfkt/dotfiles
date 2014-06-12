@@ -6,5 +6,5 @@ while [ -z "$(pgrep -lf kded4)" ]; do
 done
 
 # load modules
-qdbus org.kde.kded /kded loadModule powerdevil
+# qdbus org.kde.kded /kded loadModule powerdevil
 qdbus org.kde.kded /kded loadModule keyboard

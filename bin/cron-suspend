@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if [ -n "$(pgrep ^i3lock$)" ]; then
+if [ -n "$(pgrep kscreenlocker)" ]; then
   /usr/sbin/pm-suspend
 fi
