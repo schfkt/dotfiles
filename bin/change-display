@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export XAUTHORITY=/home/schfkt/.Xauthority
+export DISPLAY=:0
+
+sleep 3 # magic
+xrandr | grep "HDMI1 connected"
+if [[ $? == 0 ]]; then
+  xrandr --output HDMI1 --auto
+  xrandr --output LVDS1 --off
+else
+  xrandr --output LVDS1 --auto
+  xrandr --output HDMI1 --off
+fi
+
+export HOME=/home/schfkt # feh fails without this line
+feh --bg-scale /home/schfkt/wall.png

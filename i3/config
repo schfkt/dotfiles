@@ -193,7 +193,6 @@ assign [class="Skype"] 1
 
 # useful hotkeys
 bindsym $mod+n exec --no-startup-id dolphin
-bindsym $mod+p exec --no-startup-id ~/bin/switch-display
 bindsym $mod+m exec --no-startup-id ksysguard
 bindsym $mod+z exec --no-startup-id systemsettings
 bindsym $mod+c exec --no-startup-id ~/bin/scrshot
@@ -209,8 +208,8 @@ bindsym $mod+o exec --no-startup-id "~/bin/i3-toggle-bar"
 
 # start required apps
 exec --no-startup-id ~/bin/services
-exec --no-startup-id ~/bin/switch-display
+exec --no-startup-id ~/bin/change-display
 exec --no-startup-id dropbox start -i
 exec --no-startup-id kmix
 exec --no-startup-id klipper
-exec --no-startup-id synapse
+exec --no-startup-id synapse -s
