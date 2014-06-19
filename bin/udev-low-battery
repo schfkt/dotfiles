@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export XAUTHORITY=/home/schfkt/.Xauthority
+export DISPLAY=:0
+
+if [ -z "$(pgrep kscreenlocker)" ]; then
+  sudo -u schfkt /usr/lib/kde4/libexec/kscreenlocker_greet &
+fi
+sleep 1
+pm-suspend
