@@ -13,5 +13,3 @@ else
   xrandr --output HDMI1 --off
 fi
 
-export HOME=/home/schfkt # feh fails without this line
-feh --bg-scale /home/schfkt/wall.png

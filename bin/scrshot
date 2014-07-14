@@ -4,7 +4,6 @@
 DROPBOX_PUBLIC=~/Dropbox/Public/
 random_number=$(od -vAn -tu4 -N4 < /dev/urandom | tr -d ' ')
 filepath="$DROPBOX_PUBLIC/$(date +%F-%H-%M-%S-%N)-$random_number.png"
-sleep 1 # need some magic here
 scrot -s $filepath
 public_url=$(dropbox puburl $filepath)
 if [[ $public_url =~ ^https:// ]]; then

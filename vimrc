@@ -32,6 +32,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'moll/vim-node'
+Plugin 'travitch/hasksyn'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -67,6 +68,16 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Ignore node_modules folders
 set wildignore+=*/node_modules/*
 
+" Allow to use Russian keymap in normal mode
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+" Don't make backups at all
+set nobackup
+set nowritebackup
+set backupdir=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
+
+set wildmenu
 
 " -----------------------------------------------------------------------------
 " Status line
@@ -118,6 +129,9 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+nnoremap E ea
+nnoremap B bi
 
 
 " -----------------------------------------------------------------------------

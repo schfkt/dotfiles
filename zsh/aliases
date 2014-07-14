@@ -38,6 +38,14 @@ alias gs='false' # fuck it
 alias ccat='pygmentize -g'
 alias dotfiles='cd ~/dotfiles'
 
+# jobs management
+alias j='jobs'
+
+# %1 - %9
+for i in {1..9}; do
+  alias j$i="%$i"
+done
+
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
 
