@@ -32,7 +32,9 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'moll/vim-node'
-Plugin 'travitch/hasksyn'
+Plugin 'dag/vim2hs'
+Plugin 'zhaocai/GoldenView.Vim'
+Plugin 'kchmck/vim-coffee-script'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -71,13 +73,14 @@ set wildignore+=*/node_modules/*
 " Allow to use Russian keymap in normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-" Don't make backups at all
-set nobackup
-set nowritebackup
-set backupdir=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
-
 set wildmenu
+
+" Turn off folding
+set foldmethod=manual
+set nofoldenable
+
+" Disable automatic comment insertion
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " -----------------------------------------------------------------------------
 " Status line
@@ -133,6 +136,8 @@ noremap <Right> <NOP>
 nnoremap E ea
 nnoremap B bi
 
+" Hide search highlighting
+nnoremap <leader>n :noh<CR>
 
 " -----------------------------------------------------------------------------
 " Settings for plugins
@@ -155,6 +160,10 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 " Auto focus on tagbar window
 let g:tagbar_autofocus = 1
 
+" Syntastic
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
+
+" Disable default hotkeys of GoldenView.vim
+let g:goldenview__enable_default_mapping = 0
 

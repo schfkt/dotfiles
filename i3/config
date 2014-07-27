@@ -173,13 +173,17 @@ bar {
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
 hide_edge_borders both
+
+# borders
+new_float normal 4
 new_window normal 2
 
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindcode $mod+34 [class="Konsole"] scratchpad show
-bindcode $mod+35 [class="Google-chrome|X-www-browser"] scratchpad show
+bindcode $mod+35 [class="Google-chrome-stable" title="Google Chrome$"] scratchpad show
+bindcode $mod+48 [title="Wunderlist$"] scratchpad show
 
 # set style for particular windows
 for_window [title="Разблокирование секретного ключа"] floating enable
