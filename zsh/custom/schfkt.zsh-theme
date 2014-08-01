@@ -5,10 +5,9 @@ pipe_symbol="%F{253%}|%{$reset_color%}"
 # ruby version
 function ruby_version()
 {
-  local rvm_color="%F{160}"
-  if which rvm-prompt &> /dev/null; then
-    echo " %{$pipe_symbol%} %{$rvm_color%}"`rvm-prompt v g`"%{$reset_color%}"
-  fi
+  local color="%F{160}"
+  local version=$(rbenv version | cut -f 1 -d ' ')
+  echo " %{$pipe_symbol%} %{$color%}$version%{$reset_color%}"
 }
 
 # node version
@@ -78,7 +77,7 @@ staged_color="%F{70}"
 unstaged_color="%F{166}"
 new_files_color="%F{164}"
 PR_RST="%{${reset_color}%}"
-FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%}%b%u%c${PR_RST}"
+FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%} %b%u%c${PR_RST}"
 FMT_ACTION=" %F{91%}%a${PR_RST}"
 FMT_UNSTAGED="%{$unstaged_color%}+"
 FMT_STAGED="%{$staged_color%}+"
@@ -112,9 +111,9 @@ function steeef_precmd {
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard --directory 2> /dev/null | grep -q "."; then
             PR_GIT_UPDATE=1
-            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%}%b%u%c%{$new_files_color%}+${PR_RST}"
+            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%} %b%u%c%{$new_files_color%}+${PR_RST}"
         else
-            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%}%b%u%c${PR_RST}"
+            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%} %b%u%c${PR_RST}"
         fi
         zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 

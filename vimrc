@@ -116,6 +116,7 @@ hi clear SignColumn
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRU<CR>
 nnoremap <leader>a :Ag<Space>
 
 " Quicker window movement
@@ -138,6 +139,7 @@ nnoremap B bi
 
 " Hide search highlighting
 nnoremap <leader>n :noh<CR>
+
 
 " -----------------------------------------------------------------------------
 " Settings for plugins

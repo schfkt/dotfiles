@@ -1,15 +1,5 @@
 # vim: ft=zsh
 
-# rvm loader
-function load_rvm() {
-  if ! type rvm &> /dev/null; then
-    PATH=$PATH:$HOME/.rvm/bin
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-  else
-    echo "rvm is already loaded"
-  fi
-}
-
 # nvm loader
 function load_nvm() {
   if ! type nvm &> /dev/null; then
@@ -57,4 +47,9 @@ function fuck() {
     killall $2
     echo ";-("
   fi
+}
+
+# Connect to server and start/attach screen
+function sshs() {
+  ssh $1 -t "screen -R"
 }
