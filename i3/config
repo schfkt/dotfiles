@@ -226,3 +226,4 @@ exec --no-startup-id dropbox start -i
 exec --no-startup-id kmix
 exec --no-startup-id klipper
 exec --no-startup-id synapse -s
+exec --no-startup-id syndaemon -i 1 -K -d # helps to ignore touchpad while typing

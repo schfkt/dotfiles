@@ -49,7 +49,21 @@ function fuck() {
   fi
 }
 
-# Connect to server and start/attach screen
-function sshs() {
+# connect to server and start/attach screen
+function s() {
   ssh $1 -t "screen -R"
+}
+
+# commit with a special message (useful for redmine users)
+function gcor() {
+  if [[ -n $1 ]] && [[ -n $2 ]]; then
+    local message="[refs #$1] $2"
+    git commit -m $message
+  else
+    echo How to use:
+    echo "  gcor <issue id> <message>"
+    echo
+    echo Example:
+    echo "  gcor 42 'Add Readme'"
+  fi
 }
