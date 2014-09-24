@@ -3,17 +3,15 @@ unalias ..
 unalias ll
 
 # git
-alias gcoam='git commit -am'
 alias gcom='git commit -m'
 alias gpoh='git push origin HEAD'
 alias gh='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias ghv='git log --graph --date=short --decorate --abbrev-commit --stat'
-alias ghva='git log --graph --date=short --decorate --abbrev-commit --stat --all'
+alias ghh='gh | head'
 alias gsh='git stash'
 alias gpo='git push origin'
-alias glr='git pull -r'
-alias glro='git pull -r origin'
 alias gau='git add -u'
+alias gad='git add .'
+alias gk='gitk --all --branches &'
 
 # package management
 alias ai='sudo apt-get install'
@@ -37,6 +35,8 @@ alias ll='ls -lh'
 alias gs='false' # fuck it
 alias ccat='pygmentize -g'
 alias dotfiles='cd ~/dotfiles'
+alias up='nmcli con up id'
+alias down='nmcli con down id'
 
 # jobs management
 alias j='jobs'
@@ -64,4 +64,4 @@ alias r='rails'
 alias rs='rails s'
 alias rc='rails c'
 alias rg='rails g'
-
+alias b='bundle'

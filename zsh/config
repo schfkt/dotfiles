@@ -4,26 +4,13 @@ export PATH="$HOME/.rbenv/bin:$PATH:$HOME/.cabal/bin:/opt/cabal/1.20/bin:/opt/gh
 # zsh-completions
 fpath=(~/dotfiles/lib/zsh-completions/src $fpath)
 
-# Path to your oh-my-zsh configuration.
+# oh-my-zsh
 ZSH=$HOME/dotfiles/lib/oh-my-zsh
-
-# Theme
 ZSH_THEME="schfkt"
-
-# Plugins
 plugins=(git colored-man)
-
 DISABLE_AUTO_UPDATE="true"
-
-# turn off annoying autocorrect
 DISABLE_CORRECTION="true"
-
-# don't change automatically title for tmux windows
-export DISABLE_AUTO_TITLE=true
-
-# folder with custom themes/plugins etc.
 ZSH_CUSTOM=~/dotfiles/zsh/custom
-
 source $ZSH/oh-my-zsh.sh
 
 # zsh-syntax-highlighting
@@ -32,9 +19,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # zsh-history-substring-search
 source ~/dotfiles/lib/zsh-history-substring-search/zsh-history-substring-search.zsh
-# colors
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=2,fg=white,bold'
-# bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
@@ -44,3 +29,6 @@ bindkey \^U backward-kill-line
 
 # init rbenv
 eval "$(rbenv init -)"
+
+# don't change automatically title for tmux windows
+export DISABLE_AUTO_TITLE=true

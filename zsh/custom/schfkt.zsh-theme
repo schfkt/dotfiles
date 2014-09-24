@@ -1,13 +1,12 @@
 # This theme is based on the steef theme from oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/steeef.zsh-theme
-pipe_symbol="%F{253%}|%{$reset_color%}"
 
 # ruby version
 function ruby_version()
 {
   local color="%F{160}"
   local version=$(rbenv version | cut -f 1 -d ' ')
-  echo " %{$pipe_symbol%} %{$color%}$version%{$reset_color%}"
+  echo " [%{$color%}$version%{$reset_color%}]"
 }
 
 # node version
@@ -17,7 +16,7 @@ function node_version()
   local nvm_color="%F{70}"
   if which nvm &> /dev/null; then
     if [[ "$(node -v)" -pcre-match "v(\d+\.\d+\.\d+)" ]]; then
-      echo " %{$pipe_symbol%} %{$nvm_color%}$match%{$reset_color%}"
+      echo " [%{$nvm_color%}$match%{$reset_color%}]"
     fi
   fi
 }
@@ -30,10 +29,6 @@ function node_version()
 #
 # git untracked files modification from Brian Carper:
 # http://briancarper.net/blog/570/git-info-in-your-zsh-prompt
-
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
 PR_GIT_UPDATE=1
 
 setopt prompt_subst
@@ -59,7 +54,7 @@ else
 fi
 
 # enable VCS systems you use
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 
 # check-for-changes can be really slow.
 # you should disable it, if you work with large repositories
@@ -77,7 +72,7 @@ staged_color="%F{70}"
 unstaged_color="%F{166}"
 new_files_color="%F{164}"
 PR_RST="%{${reset_color}%}"
-FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%} %b%u%c${PR_RST}"
+FMT_BRANCH="%{$branch_color%}%b%u%c${PR_RST}"
 FMT_ACTION=" %F{91%}%a${PR_RST}"
 FMT_UNSTAGED="%{$unstaged_color%}+"
 FMT_STAGED="%{$staged_color%}+"
@@ -111,9 +106,9 @@ function steeef_precmd {
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard --directory 2> /dev/null | grep -q "."; then
             PR_GIT_UPDATE=1
-            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%} %b%u%c%{$new_files_color%}+${PR_RST}"
+            FMT_BRANCH="%{$branch_color%}%b%u%c%{$new_files_color%}+${PR_RST}"
         else
-            FMT_BRANCH="%{$pipe_symbol%} %{$branch_color%} %b%u%c${PR_RST}"
+            FMT_BRANCH="%{$branch_color%}%b%u%c${PR_RST}"
         fi
         zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 
