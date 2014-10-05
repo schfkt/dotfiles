@@ -33,7 +33,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'moll/vim-node'
 Plugin 'dag/vim2hs'
-Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'kchmck/vim-coffee-script'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -81,6 +80,12 @@ set nofoldenable
 
 " Disable automatic comment insertion
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+" Save that fuckin garbage in one place
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 
 " -----------------------------------------------------------------------------
 " Status line
@@ -165,7 +170,4 @@ let g:tagbar_autofocus = 1
 " Syntastic
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
-
-" Disable default hotkeys of GoldenView.vim
-let g:goldenview__enable_default_mapping = 0
 
