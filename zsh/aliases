@@ -65,3 +65,5 @@ alias rs='rails s'
 alias rc='rails c'
 alias rg='rails g'
 alias b='bundle'
+alias rr='rake routes'
+

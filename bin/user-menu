@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# shows simple menu with the next items: suspend, lock, reboot, halt, cancel
+# shows simple menu with the next items: suspend, lock, reboot, halt
 # requirements: dzen2
 # inspired by: https://github.com/ashinkarov/i3-extras/blob/master/i3-exit
 
@@ -9,8 +9,7 @@ MENU_ENTRIES = {
   :suspend  => "Suspend (s)",
   :lock     => "Lock    (l)",
   :reboot   => "Reboot  (r)",
-  :halt     => "Halt    (h)",
-  :cancel   => "Cancel  (c)"
+  :halt     => "Halt    (h)"
 }
 
 def get_active_output_size
@@ -30,8 +29,7 @@ def setup_events
     "key_s=ungrabkeys,print:#{MENU_ENTRIES[:suspend]},exit",
     "key_l=ungrabkeys,print:#{MENU_ENTRIES[:lock]},exit",
     "key_r=ungrabkeys,print:#{MENU_ENTRIES[:reboot]},exit",
-    "key_h=ungrabkeys,print:#{MENU_ENTRIES[:halt]},exit",
-    "key_c=ungrabkeys,print:#{MENU_ENTRIES[:cancel]},exit"
+    "key_h=ungrabkeys,print:#{MENU_ENTRIES[:halt]},exit"
   ].join(";")
 end
 
@@ -57,8 +55,7 @@ def setup_menu
   "\n#{MENU_ENTRIES[:suspend]}"\
   "\n#{MENU_ENTRIES[:lock]}"\
   "\n#{MENU_ENTRIES[:reboot]}"\
-  "\n#{MENU_ENTRIES[:halt]}"\
-  "\n#{MENU_ENTRIES[:cancel]}"
+  "\n#{MENU_ENTRIES[:halt]}"
 end
 
 def get_command(action)

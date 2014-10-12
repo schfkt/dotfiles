@@ -164,7 +164,6 @@ bar {
         status_command i3status --config ~/.i3/status.conf
         position top
         mode invisible
-        workspace_buttons no
 }
 
 workspace_auto_back_and_forth yes
