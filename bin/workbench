@@ -1,0 +1,5 @@
+#!/bin/bash
+# allows mysql workbench to work without gnome-keyring daemon
+
+WB_NO_GNOME_KEYRING=1
+mysql-workbench
