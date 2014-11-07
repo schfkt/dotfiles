@@ -17,9 +17,8 @@ alias gk='gitk --all --branches &'
 alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
 alias arm='sudo apt-get remove'
-alias aca='apt-cache'
-alias acas='apt-cache --names-only search'
 alias ac='apt-cache'
+alias acs='apt-cache --names-only search'
 alias repo='sudo add-apt-repository'
 alias autorm='sudo apt-get autoremove'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
@@ -58,7 +57,7 @@ alias tk='tmux kill-session -t'
 # vim
 alias v='vim'
 
-# ruby/rails
+# ruby/rails and friends
 alias cuke='cucumber -f html -b'
 alias r='rails'
 alias rs='rails s'
@@ -66,4 +65,5 @@ alias rc='rails c'
 alias rg='rails g'
 alias b='bundle'
 alias rr='rake routes'
+alias cw='coffee -cbw --output . coffee'
 

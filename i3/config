@@ -180,7 +180,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindcode $mod+34 [class="Konsole"] scratchpad show
 bindcode $mod+35 [class="^Google-chrome" title="Google Chrome$"] scratchpad show
-bindcode $mod+48 [title="Wunderlist$"] scratchpad show
+bindcode $mod+48 [class="Ktimer"] scratchpad show
 bindcode $mod+61 [class="TogglDesktop"] scratchpad show
 
 # set style for particular windows

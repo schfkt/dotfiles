@@ -51,7 +51,7 @@ function fuck() {
 
 # connect to server and start/attach screen
 function s() {
-  ssh $1 -t "screen -R"
+  ssh $1 -t "screen -dR"
 }
 
 # commit with a special message (useful for redmine users)
