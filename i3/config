@@ -189,6 +189,9 @@ for_window [title="Введите идентификационную фразу"
 for_window [title="^Копирование" class="Dolphin"] floating enable
 for_window [title="^Удаление" class="Dolphin"] floating enable
 for_window [class="Kde-nm-connection-editor"] floating enable
+for_window [title="^Распаковка файла"] floating enable
+for_window [title="^Перемещение" class="Dolphin"] floating enable
+for_window [title="^Процесс выполнения" class="Dolphin"] floating enable
 
 # put windows on specific workspace
 assign [class="Skype"] 1

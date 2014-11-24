@@ -1,6 +1,7 @@
 # disable some shit from oh-my-zsh
 unalias ..
 unalias ll
+unalias grhh
 
 # git
 alias gcom='git commit -m'
@@ -10,7 +11,7 @@ alias ghh='gh | head'
 alias gsh='git stash'
 alias gpo='git push origin'
 alias gau='git add -u'
-alias gad='git add .'
+alias gaa='git add -A'
 alias gk='gitk --all --branches &'
 
 # package management
