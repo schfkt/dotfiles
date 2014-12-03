@@ -6,7 +6,7 @@ fpath=(~/dotfiles/lib/zsh-completions/src $fpath)
 
 # oh-my-zsh
 ZSH=$HOME/dotfiles/lib/oh-my-zsh
-ZSH_THEME="schfkt"
+ZSH_THEME="minimal"
 plugins=(git colored-man)
 DISABLE_AUTO_UPDATE="true"
 DISABLE_CORRECTION="true"

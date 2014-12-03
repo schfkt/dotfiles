@@ -65,6 +65,7 @@ alias rs='rails s'
 alias rc='rails c'
 alias rg='rails g'
 alias b='bundle'
+alias be='bundle exec'
 alias rr='rake routes'
 alias cw='coffee -cbw --output . coffee'
 
