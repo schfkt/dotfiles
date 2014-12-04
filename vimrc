@@ -110,7 +110,7 @@ set statusline+=%<%P                         " file position
 set t_Co=256
 colorscheme solarized
 set background=dark
-hi ColorColumn ctermbg=7
+hi ColorColumn ctermbg=0
 hi clear SignColumn
 
 
