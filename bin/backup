@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DESTINATION=/media/schfkt/cc87bc80-db2b-45c9-97b1-a0ebd1d17710/backup
+SOURCE=~
+EXCLUDE_FILELIST=~/dotfiles/etc/backup-exclude.conf
+
+if [ -d "$DESTINATION" ]; then
+    echo "Removing older files..."
+    rdiff-backup --remove-older-than 2M $DESTINATION
+    echo "Backup process started..."
+    rdiff-backup -v5 --print-statistics --exclude-filelist $EXCLUDE_FILELIST $SOURCE $DESTINATION
+else
+    echo "Destination dir not found"
+fi
