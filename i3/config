@@ -162,7 +162,7 @@ bindsym $mod+y focus floating; mode "moveit"
 bar {
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         status_command i3status --config ~/.i3/status.conf
-        position top
+        position bottom
         mode invisible
 }
 
@@ -180,8 +180,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindcode $mod+34 [class="Konsole"] scratchpad show
 bindcode $mod+35 [class="^Google-chrome" title="Google Chrome$"] scratchpad show
-bindcode $mod+48 [class="Ktimer"] scratchpad show
-bindcode $mod+61 [class="TogglDesktop"] scratchpad show
+bindcode $mod+48 [class="Keepassx"] scratchpad show
 
 # set style for particular windows
 for_window [title="Разблокирование секретного ключа"] floating enable
