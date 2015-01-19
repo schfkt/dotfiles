@@ -44,7 +44,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 filetype plugin on
 filetype indent on
-syntax on
+syntax off
 set shiftwidth=2
 set tabstop=2
 set expandtab
@@ -109,8 +109,8 @@ set statusline+=%<%P                         " file position
 
 set t_Co=256
 colorscheme solarized
-set background=dark
-hi ColorColumn ctermbg=0
+set bg=light
+hi ColorColumn ctermbg=7
 hi clear SignColumn
 
 

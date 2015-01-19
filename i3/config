@@ -144,7 +144,7 @@ bindsym $mod+y focus floating; mode "moveit"
 bar {
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         status_command i3status --config ~/.i3/status.conf
-        position bottom
+        position top
         mode invisible
 }
 
@@ -210,7 +210,7 @@ bindsym $mod+t move absolute position center
 
 # start required apps
 exec --no-startup-id ~/bin/services
-exec --no-startup-id ~/bin/change-display
+exec --no-startup-id ~/bin/udev-plug-display
 exec --no-startup-id dropbox start -i
 exec --no-startup-id kmix
 exec --no-startup-id klipper

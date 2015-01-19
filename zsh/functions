@@ -67,3 +67,19 @@ function gcor() {
     echo "  gcor 42 'Add Readme'"
   fi
 }
+
+# I'm tired of doing push into the wrong branch
+function gpoh() {
+  local current=$(git rev-parse --abbrev-ref HEAD)
+  if [[ $current == "master" ]]; then
+    git push origin HEAD
+  else
+    echo "You are going to push into '$current' branch. Continue?"
+    select answer in "Yes" "No"; do
+      case $answer in
+        Yes) git push origin HEAD; break;;
+        No) break;;
+      esac
+    done
+  fi
+}

@@ -5,7 +5,7 @@ unalias grhh
 
 # git
 alias gcom='git commit -m'
-alias gpoh='git push origin HEAD'
+# alias gpoh='git push origin HEAD'
 alias gh='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias ghh='gh | head'
 alias gsh='git stash'
@@ -25,7 +25,6 @@ alias autorm='sudo apt-get autoremove'
 alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 # misc
-alias re!='source ~/.zshrc'
 alias svc='sudo service'
 alias pd="cd -"
 alias dl='dolphin . &'
@@ -34,7 +33,6 @@ alias vg='vagrant'
 alias ll='ls -lh'
 alias gs='false' # fuck it
 alias ccat='pygmentize -g'
-alias dotfiles='cd ~/dotfiles'
 alias up='nmcli con up id'
 alias down='nmcli con down id'
 
@@ -59,13 +57,12 @@ alias tk='tmux kill-session -t'
 alias v='vim'
 
 # ruby/rails and friends
-alias cuke='cucumber -f html -b'
-alias r='rails'
-alias rs='rails s'
-alias rc='rails c'
-alias rg='rails g'
 alias b='bundle'
 alias be='bundle exec'
-alias rr='rake routes'
+alias r='be rails'
+alias rs='be rails s'
+alias rc='be rails c'
+alias rg='be rails g'
+alias rr='be rake routes'
 alias cw='coffee -cbw --output . coffee'
-
+alias cuke='cucumber -f html -b'
