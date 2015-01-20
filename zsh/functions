@@ -9,12 +9,6 @@ function load_nvm() {
   fi
 }
 
-# cd and then list
-function cl() {
-  cd $1
-  ls
-}
-
 # Source: http://unix.stackexchange.com/questions/6/what-are-your-favorite-command-line-features-or-tricks/122#122
 # Usage .. [n]
 function .. (){

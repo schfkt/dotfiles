@@ -5,7 +5,6 @@ unalias grhh
 
 # git
 alias gcom='git commit -m'
-# alias gpoh='git push origin HEAD'
 alias gh='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias ghh='gh | head'
 alias gsh='git stash'
@@ -32,17 +31,8 @@ alias plf='pgrep -lf'
 alias vg='vagrant'
 alias ll='ls -lh'
 alias gs='false' # fuck it
-alias ccat='pygmentize -g'
 alias up='nmcli con up id'
 alias down='nmcli con down id'
-
-# jobs management
-alias j='jobs'
-
-# %1 - %9
-for i in {1..9}; do
-  alias j$i="%$i"
-done
 
 # download file by link from clipboard
 alias dw='xclip -o | xargs wget'
@@ -60,7 +50,6 @@ alias v='vim'
 alias b='bundle'
 alias be='bundle exec'
 alias r='be rails'
-alias rs='be rails s'
 alias rc='be rails c'
 alias rg='be rails g'
 alias rr='be rake routes'
