@@ -65,7 +65,6 @@ def get_command(action)
     "dbus-send --print-reply --system --dest=org.freedesktop.UPower "\
     "/org/freedesktop/UPower org.freedesktop.UPower.Suspend"
   when MENU_ENTRIES[:lock]
-    "xset dpms force off && "\
     "/usr/lib/kde4/libexec/kscreenlocker_greet"
   when MENU_ENTRIES[:reboot]
     "dbus-send --system --print-reply --dest=\"org.freedesktop.ConsoleKit\" "\

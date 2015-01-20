@@ -187,8 +187,8 @@ bindsym $mod+o exec --no-startup-id dolphin
 bindsym $mod+b exec --no-startup-id ~/bin/i3-toggle-bar
 
 # switch to the next/previous workspace
-bindsym $mod+j workspace prev
-bindsym $mod+k workspace next
+bindsym $mod+p workspace prev
+bindsym $mod+n workspace next
 
 # move focused container to the next/previous workspace
 bindsym $mod+Shift+p move container to workspace prev
