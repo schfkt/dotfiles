@@ -1,0 +1,30 @@
+[$Version]
+update_info=konsole.upd:2.9.0-global-options
+
+[Desktop Entry]
+DefaultProfile=42.profile
+
+[Favorite Profiles]
+Favorites=42.profile
+
+[KonsoleWindow]
+ShowAppNameOnTitleBar=false
+ShowMenuBarByDefault=false
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+Height 1200=1201
+Height 768=554
+Height 960=923
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA74AAASeAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1280=1280
+Width 1366=675
+Width 1920=1921
+
+[Notification Messages]
+:confirmNewSession[$d]
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded

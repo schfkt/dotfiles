@@ -8,6 +8,10 @@ cd $DOTFILES_DIR
 git submodule init
 git submodule update
 
+# konsole
+ln -s ~/dotfiles/konsole/profiles ~/.kde/share/apps/konsole
+ln -s ~/dotfiles/konsole/konsolerc ~/.kde/share/config/konsolerc
+
 # other configs
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.vimrc
