@@ -62,6 +62,7 @@ def get_command(action)
   case action
   when MENU_ENTRIES[:suspend]
     "/usr/lib/kde4/libexec/kscreenlocker_greet & "\
+    "sleep 2 && "\
     "dbus-send --print-reply --system --dest=org.freedesktop.UPower "\
     "/org/freedesktop/UPower org.freedesktop.UPower.Suspend"
   when MENU_ENTRIES[:lock]

@@ -163,6 +163,7 @@ bindsym $mod+minus scratchpad show
 bindcode $mod+34 [class="Konsole"] scratchpad show
 bindcode $mod+35 [class="^Google-chrome" title="Google Chrome$"] scratchpad show
 bindcode $mod+48 [class="Keepassx"] scratchpad show
+bindcode $mod+61 [class="Ktimer"] scratchpad show
 
 # set style for particular windows
 for_window [title="Разблокирование секретного ключа"] floating enable
@@ -215,6 +216,7 @@ exec --no-startup-id dropbox start -i
 exec --no-startup-id kmix
 exec --no-startup-id klipper
 exec --no-startup-id synapse -s
+exec --no-startup-id bluedevil-monolithic
 
 # ignore touchpad while typing
 exec --no-startup-id syndaemon -i 1 -K -d
